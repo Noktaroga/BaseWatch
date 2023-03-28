@@ -1,0 +1,122 @@
+{% extends "./base.html" %}
+
+<style>
+  .test-style {
+    margin: 0.5em;
+  }
+  .button-display {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+  .center-anything {
+    margin: 0 auto;
+  }
+</style>
+ {% block body %} {% if user.is_authenticated%}
+
+
+<div class="d-flex justify-content-center bd-highlight" style="background-color: #11111;">
+  {% if user.is_authenticated and user.is_staff%}
+
+  <button type="submit" name="button" class="button-display test-style">
+    <a class="btn btn-primary btn-sm" href="{% url 'crear_Capacidad' %}">
+      Añadir Proyecto</a>
+  </button>
+
+  <button type="submit" name="button" class="button-display test-style">
+    <a class="btn btn-primary btn-sm" href="{% url 'profile_upload' %}">
+      Subir Proyecto</a>
+  </button>
+  {% endif %}
+</div>
+
+<table border="1px" cellspacing="0" class="table table-striped">
+  <!--cellspacing obligatorio para separar tabla de forma correcta-->
+  <tr>
+    <th>ID</th>
+    <th>Estado Proyectos</th>
+    <th>Tipo de solución</th>
+    <th>Año</th>
+
+    {% if user.is_authenticated and user.is_staff%}
+    <th>Opcion</th>
+    {% endif %}
+  </tr>
+  {% for book_1 in page_obj %}
+  <tr>
+    {% if book_1.Estado_Ejecucion %}
+    <td>{{book_1.SGI_INDEX}}</td>
+    <td>{{book_1.Estado_Ejecucion}}</td>
+    <td>{{book_1.Tipo_Solucion}}</td>
+    <td>{{book_1.Year}}</td>
+    
+
+    {% if user.is_authenticated and user.is_staff%}
+    <td>
+      <button type="submit" name="button" class="button-display test-style center-anything">
+        <a class="btn btn-info btn-sm" href="{% url 'editar_Capacidad' book_1.SGI_INDEX %}">
+          EDIT</a>
+      </button>
+
+      <button type="submit" name="button" class="button-display test-style center-anything">
+        <a class="btn btn-danger btn-sm" href="{% url 'eliminar_Capacidad' book_1.SGI_INDEX %}">
+          ELIM</a>
+      </button>
+    </td>
+    <!-- ID_SGI presentado como boton dentro de TD en tabla-->
+    <!-- Al yo apretar el boton EDIT me esta redireccionando a la URL comando anterior-->
+    {% endif %} {% endif %} {% endfor %}
+  </tr>
+  
+</table>
+{% if page_obj.has_other_pages %}
+<div class="d-flex justify-content-center col-4 offset-4 ">
+  <nav aria-label="...">
+    <ul class="pagination">
+      {% if page_obj.has_previous %}
+      <li class="page-item">
+        <a href="?page={{ page_obj.previous_page_number }}" class="page-link">Previous</a
+        >
+      </li>
+      <li>
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+          {{ page_obj.previous_page_number }}
+        </a>
+      </li>
+      {% else %}
+      <li class="page-item disabled">
+        <span class="page-link">Previous</span>
+      </li>
+      {% endif %}
+
+      <li class="page-item active">
+        <span class="page-link">{{ page_obj.number }}</span>
+      </li>
+
+      {% if page_obj.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+          {{ page_obj.next_page_number }}
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}"
+          >Next</a
+        >
+      </li>
+      {% else %}
+      <li class="page-item disabled">
+        <span class="page-link">Next</span>
+      </li>
+      {% endif %} {% endif %}
+    </ul>
+  </nav>
+</div>
+
+
+{% endif %} {% endblock%}

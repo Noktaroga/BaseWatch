@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block body %} 
+<div class="d-flex justify-content-center" style="margin-top:20em;">
+<form method="POST">
+  <legend>Log In</legend>
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit" >Log In</button>
+</form>
+</div>
+
+{% endblock %}
+

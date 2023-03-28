@@ -1,0 +1,82 @@
+{% extends "./base.html" %}
+{% block body %}
+
+<div class="d-flex justify-content-center bd-highlight" style="background-color: #11111;">
+
+<button type="submit" name="button" class="button-display test-style center-anything" style="margin: 0.5em;">
+    <a class="btn btn-info btn-sm" href="{% url 'rollback_from_csv' %}">Update DB</a>
+  </button>
+
+</div>
+
+<table border="1px" cellspacing="0" class="table table-striped">
+    <tr>
+        <th>MAC_ADDRESS</th>
+        <th>ADDRESS_VTR</th>
+        <th>LOCA</th>
+        <th>NODO</th>
+        <th>QUAD</th>
+        <th>LATI</th>
+        <th>LONG</th>
+        <th>ID</th>
+    </tr>
+       
+    {%for datass in page_obj%}
+    <tr>
+        <td>{{datass.mac_cm}}</td>
+        <td>{{datass.nom_direc}}</td>
+        <td>{{datass.cod_loca}}</td>
+        <td>{{datass.cod_nodo}}</td>
+        <td>{{datass.cod_cuadrante}}</td>
+        <td>{{datass.num_latit}}</td>
+        <td>{{datass.num_longit}}</td>
+        <td>{{datass.SGI_INDEX}}</td>
+        <td>{{datass.created_at}}</td> 
+    
+    </tr>
+    {%endfor%}
+  </table>
+  {% if page_obj.has_other_pages %}
+<div class="d-flex justify-content-center col-4 offset-4 ">
+  <nav aria-label="...">
+    <ul class="pagination">
+      {% if page_obj.has_previous %}
+      <li class="page-item">
+        <a href="?page={{ page_obj.previous_page_number }}" class="page-link">Previous</a
+        >
+      </li>
+      <li>
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+          {{ page_obj.previous_page_number }}
+        </a>
+      </li>
+      {% else %}
+      <li class="page-item disabled">
+        <span class="page-link">Previous</span>
+      </li>
+      {% endif %}
+
+      <li class="page-item active">
+        <span class="page-link">{{ page_obj.number }}</span>
+      </li>
+
+      {% if page_obj.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+          {{ page_obj.next_page_number }}
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}"
+          >Next</a
+        >
+      </li>
+      {% else %}
+      <li class="page-item disabled">
+        <span class="page-link">Next</span>
+      </li>
+      {% endif %} {% endif %}
+    </ul>
+  </nav>
+</div>
+  {% endblock %}

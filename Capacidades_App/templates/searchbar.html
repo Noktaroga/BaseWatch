@@ -1,0 +1,86 @@
+{% extends "./dashboard.html" %} {% block body %}{%if post%}
+
+<div class="table-container overflow-auto">
+  <table border="1px" cellspacing="0" class="table table-striped">
+    <tr>
+      <th>SGI_INDEX</th>
+      {% if user.is_authenticated and user.is_staff%}
+      <th>Opcion</th>
+      <th>Opcion</th>
+      {% endif%}
+
+      <th>Zona</th>
+      <th>HUB</th>
+      <th>Comuna</th>
+      <th>Clave</th>
+      <th>Cuadrantes</th>
+      <th>Cantidad_N</th>
+      <th>Fecha_Solicitud</th>
+      <th>OBS_Solicitud</th>
+      <th>Tipo_Solucion</th>
+      <th>Clientes_Afectados</th>
+      <th>Estado_Ejecucion</th>
+      <th>Tipo_de_Red</th>
+      <th>Estado_Design_Simplificado</th>
+      <th>Fecha_Design</th>
+      <th>Asignacion_Energía</th>
+      <th>Estado_Ejecucion_2</th>
+      <th>Fecha_Ejecucion</th>
+      <th>Motivo</th>
+      <th>KPI_EJECUCION</th>
+      <th>Estado_CaPO</th>
+      <th>Fecha_Estado</th>
+      <th>Horas_95</th>
+      <th>Horas_90</th>
+    </tr>
+    {%for i in post %}
+    <tr>
+      <td>{{i.SGI_INDEX}}</td>
+      {% if user.is_authenticated and user.is_staff%}
+      <td>
+        <a
+          class="btn btn-info btn-sm"
+          href="{% url 'editar_Capacidad' i.SGI_INDEX %}"
+          >EDIT</a
+        >
+      </td>
+
+      <td>
+        <a
+          class="btn btn-danger btn-sm"
+          href="{% url 'eliminar_Capacidad' i.SGI_INDEX %}"
+          >ELIM</a
+        >
+      </td>
+      {% endif %}
+      <td>{{i.Zona}}</td>
+      <td>{{i.HUB}}</td>
+      <td>{{i.Comuna}}</td>
+      <td>{{i.Clave}}</td>
+      <td>{{i.Cuadrantes}}</td>
+      <td>{{i.Cantidad_N}}</td>
+      <td>{{i.Fecha_Solicitud}}</td>
+      <td>{{i.OBS_Solicitud}}</td>
+      <td>{{i.Tipo_Solucion}}</td>
+      <td>{{i.Clientes_Afectados}}</td>
+      <td>{{i.Estado_Ejecucion}}</td>
+      <td>{{i.Fecha_Cancelado}}</td>
+      <td>{{i.Tipo_de_Red}}</td>
+      <td>{{i.Estado_Design_Simplificado}}</td>
+      <td>{{i.Fecha_Design}}</td>
+      <td>{{i.Asignacion_Energía}}</td>
+      <td>{{i.Estado_Ejecucion_2}}</td>
+      <td>{{i.Fecha_Ejecucion}}</td>
+      <td>{{i.KPI_EJECUCION}}</td>
+      <td>{{i.Estado_CaPO}}</td>
+      <td>{{i.Fecha_Estado}}</td>
+      <td>{{i.Horas_95}}</td>
+      <td>{{i.Horas_90}}</td>
+
+      {%endfor%} {%else%}
+      <p>Nothing.</p>
+    </tr>
+  </table>
+</div>
+
+{%endif%} {% endblock %}

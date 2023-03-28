@@ -1,0 +1,30 @@
+{% extends "./dashboard.html" %}
+{% block body %}
+<div class="d-flex justify-content-center">
+    {% if messages %}
+        {% for message in messages %}
+            <div>
+<!--                | means OR operator-->
+                <strong>{{message|safe}}</strong>
+            </div>
+        {% endfor %}
+    {% else %}
+    
+    
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br>
+        <label for="file1"> Carga Dashboard *.CSV*</label>
+        <input type="file" id="file1" name="file"><!--Declaracion de la variable FILE la cual sera extraida en views.py como csv_file = request.FILES['file'] -->
+        <small>Una vez cargado, pulsar</small>
+        <button type="submit">Upload</button>
+    </form>
+    {% endif %}
+    {% for profile in profiles %}
+    {{profile.name}}
+    {% endfor %}
+
+</div>
+
+
+{%endblock%}

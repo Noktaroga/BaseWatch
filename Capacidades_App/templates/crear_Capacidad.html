@@ -1,0 +1,9 @@
+{% extends "./base.html" %} {% block body %}
+<div class="d-flex justify-content-left" style="margin-top:5em">
+<form method="post" class="form-label">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit">Submit</button>
+</form>
+</div>
+{% endblock %}
