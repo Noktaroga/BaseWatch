@@ -21,3 +21,12 @@ La siguiente vista muestra algunas de las funcionalidades disponibles en el dash
 Nota: Los primeros números correspondientes al ID asociado al proyecto se han eliminado por motivos de copyright.
 
 ![image](https://user-images.githubusercontent.com/72874155/228393934-28d8c516-08a4-4e2a-8b60-e8bd7883d0c9.png)
+
+Vista para añadir un proyecto, donde se muestran los campos que deben ser completados para cargar un proyecto.
+![image](https://user-images.githubusercontent.com/72874155/228401121-5b75aa9e-9b64-464d-9401-6559ef21a208.png)
+
+Vista para subir proyectos" donde se cargará un archivo *.CSV que contendrá múltiples proyectos, y nuestra aplicación será capaz de detectar todos los campos y rellenarlos automáticamente.
+
+![image](https://user-images.githubusercontent.com/72874155/228401348-57d843cd-9dcd-48dd-9c1f-5eaec1cee4e4.png)
+
+
