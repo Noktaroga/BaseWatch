@@ -6,6 +6,11 @@ Además, la aplicación permite la administración integral de cada proyecto, lo
 Página de inicio posee información acerca de lo que se lleva a cabo en la aplicación.
 ![image](https://user-images.githubusercontent.com/72874155/228393182-0e742a66-0f88-4b69-9097-fdc7d89eb075.png)
 
+La vista Opciones desplegada la cual nos permite ver informacion segun el tipo de proyecto.
+
+![image](https://user-images.githubusercontent.com/72874155/228394764-20865288-baac-4e32-9118-119f654466dd.png)
+
+
 La siguiente vista muestra algunas de las funcionalidades disponibles en el dashboard. Estas funcionalidades se han incorporado como aplicaciones en un entorno web y se han diseñado para ser amigables e intuitivas. Por ejemplo:
 
 - Se ha añadido una sección para agregar manualmente un proyecto si se desea.
