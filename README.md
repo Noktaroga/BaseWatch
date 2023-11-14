@@ -1,6 +1,6 @@
 The web application developed in Django, BaseWatch, provides a platform for registering and managing information about projects, types of projects, and their associated costs. In the application, superusers have the ability to create an account, log in, and add information about each project, including its ID, the type of project carried out in the municipality or region, the date it was implemented on-site, and the total associated cost, among other relevant details. Users can also view a complete list of all the projects they have worked on. Additionally, the application allows comprehensive project management, including the registration of new projects, the display of statistics, and the generation of charts to analyze their costs. The application uses various tools and libraries, such as pandas and django-import_export, for processing and handling data from SQLite. It is expected that in the near future, the matplotlib library will be included to facilitate graphical visualization of the data.
 
-## Vista previa de BaseWatch
+## Homepage Preview
 Homepage contains information about what takes place in the application.
 ![image](https://user-images.githubusercontent.com/72874155/228393182-0e742a66-0f88-4b69-9097-fdc7d89eb075.png)
 
