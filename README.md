@@ -1,32 +1,28 @@
-La aplicación web desarrollada en Django, Data Visualization Suite, ofrece una plataforma para registrar y administrar información sobre proyectos, tipos de proyectos y sus costos asociados.
-En la aplicación, los super usuarios tienen la capacidad de crear una cuenta, iniciar sesión y agregar información sobre cada proyecto, incluyendo su ID, el tipo de proyecto llevado a cabo en la comuna o región, la fecha en la que se ejecutó en terreno, y el costo total asociado, entre otros detalles relevantes. Los usuarios también pueden visualizar una lista completa de todos los proyectos en los que se han trabajado.
-Además, la aplicación permite la administración integral de cada proyecto, lo que incluye el registro de nuevos proyectos, la visualización de estadísticas y la generación de gráficos para analizar sus costos. La aplicación utiliza diversas herramientas y librerías, como pandas y django-import_export, para el procesamiento y manejo de datos provenientes de SQLite. Se espera que en un futuro cercano se incluya la librería matplotlib para facilitar la visualización gráfica de los mismos.
+The web application developed in Django, BaseWatch, provides a platform for registering and managing information about projects, types of projects, and their associated costs. In the application, superusers have the ability to create an account, log in, and add information about each project, including its ID, the type of project carried out in the municipality or region, the date it was implemented on-site, and the total associated cost, among other relevant details. Users can also view a complete list of all the projects they have worked on. Additionally, the application allows comprehensive project management, including the registration of new projects, the display of statistics, and the generation of charts to analyze their costs. The application uses various tools and libraries, such as pandas and django-import_export, for processing and handling data from SQLite. It is expected that in the near future, the matplotlib library will be included to facilitate graphical visualization of the data.
 
 ## Vista previa de BaseWatch
-Página de inicio posee información acerca de lo que se lleva a cabo en la aplicación.
+Homepage contains information about what takes place in the application.
 ![image](https://user-images.githubusercontent.com/72874155/228393182-0e742a66-0f88-4b69-9097-fdc7d89eb075.png)
 
-La vista Opciones desplegada la cual nos permite ver informacion segun el tipo de proyecto.
-
+The Options view is expanded, allowing us to see information based on the type of project.
 ![image](https://user-images.githubusercontent.com/72874155/228394764-20865288-baac-4e32-9118-119f654466dd.png)
 
 
-La siguiente vista muestra algunas de las funcionalidades disponibles en el dashboard. Estas funcionalidades se han incorporado como aplicaciones en un entorno web y se han diseñado para ser amigables e intuitivas. Por ejemplo:
+The following view displays some of the functionalities available in the dashboard. These functionalities have been incorporated as applications in a web environment and have been designed to be user-friendly and intuitive. For example:
 
-- Se ha añadido una sección para agregar manualmente un proyecto si se desea.
-- Se ha agregado una sección para subir múltiples proyectos en formato *.csv.
-- Se ha incorporado una sección con doble funcionalidad, que permite editar secciones específicas del proyecto y eliminar el proyecto por completo en caso de haber cometido un error.
-- Se ha agregado un paginador para revisar los datos y evitar sobrecargar la página con todo el listado.
+- A section has been added to manually add a project if desired.
+- A section has been added to upload multiple projects in *.csv format.
+- A dual-functionality section has been incorporated, allowing for the editing of specific project sections and the complete deletion of the project in case of an error.
+- A paginator has been added to review the data and avoid overloading the page with the entire listing.
 
-Nota: Los primeros números correspondientes al ID asociado al proyecto se han eliminado por motivos de copyright.
+Note: The initial numbers corresponding to the project's associated ID have been removed for copyright reasons.
 
 ![image](https://user-images.githubusercontent.com/72874155/228393934-28d8c516-08a4-4e2a-8b60-e8bd7883d0c9.png)
 
-Vista para añadir un proyecto, donde se muestran los campos que deben ser completados para cargar un proyecto.
+View to add a project, displaying the fields that need to be completed to upload a project.
 ![image](https://user-images.githubusercontent.com/72874155/228401121-5b75aa9e-9b64-464d-9401-6559ef21a208.png)
 
-Vista para subir proyectos" donde se cargará un archivo *.CSV que contendrá múltiples proyectos, y nuestra aplicación será capaz de detectar todos los campos y rellenarlos automáticamente.
-
+"Upload Projects" view where a *.CSV file containing multiple projects will be loaded, and our application will be able to detect all fields and automatically fill them in.
 ![image](https://user-images.githubusercontent.com/72874155/228401348-57d843cd-9dcd-48dd-9c1f-5eaec1cee4e4.png)
 
 
